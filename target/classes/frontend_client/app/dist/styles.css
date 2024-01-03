@@ -1,0 +1,1886 @@
+/*!
+ * /*
+ * * This file is subject to the terms and conditions defined in
+ *  * file 'LICENSE.txt', which is part of this source code package.
+ *  * /
+ *
+ */
+/* d3 */
+.dc-chart path.dc-symbol, .dc-legend g.dc-legend-item.fadeout {
+  fill-opacity: 0.5;
+  stroke-opacity: 0.5; }
+div.dc-chart {
+  float: left; }
+.dc-chart rect.bar {
+  stroke: none;
+  cursor: pointer; }
+.dc-chart rect.bar:hover {
+    fill-opacity: .5; }
+.dc-chart rect.deselected {
+  stroke: none;
+  fill: #ccc; }
+.dc-chart .pie-slice {
+  fill: #fff;
+  font-size: 12px;
+  cursor: pointer; }
+.dc-chart .pie-slice.external {
+    fill: #000; }
+.dc-chart .pie-slice :hover, .dc-chart .pie-slice.highlight {
+    fill-opacity: .8; }
+.dc-chart .pie-path {
+  fill: none;
+  stroke-width: 2px;
+  stroke: #000;
+  opacity: 0.4; }
+.dc-chart .selected path, .dc-chart .selected circle {
+  stroke-width: 3;
+  stroke: #ccc;
+  fill-opacity: 1; }
+.dc-chart .deselected path, .dc-chart .deselected circle {
+  stroke: none;
+  fill-opacity: .5;
+  fill: #ccc; }
+.dc-chart .axis path, .dc-chart .axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges; }
+.dc-chart .axis text {
+  font: 10px sans-serif; }
+.dc-chart .grid-line, .dc-chart .axis .grid-line, .dc-chart .grid-line line, .dc-chart .axis .grid-line line {
+  fill: none;
+  stroke: #ccc;
+  opacity: .5;
+  shape-rendering: crispEdges; }
+.dc-chart .brush rect.background {
+  z-index: -999; }
+.dc-chart .brush rect.extent {
+  fill: #4682b4;
+  fill-opacity: .125; }
+.dc-chart .brush .resize path {
+  fill: #eee;
+  stroke: #666; }
+.dc-chart path.line {
+  fill: none;
+  stroke-width: 1.5px; }
+.dc-chart path.area {
+  fill-opacity: .3;
+  stroke: none; }
+.dc-chart path.highlight {
+  stroke-width: 3;
+  fill-opacity: 1;
+  stroke-opacity: 1; }
+.dc-chart g.state {
+  cursor: pointer; }
+.dc-chart g.state :hover {
+    fill-opacity: .8; }
+.dc-chart g.state path {
+    stroke: #fff; }
+.dc-chart g.deselected path {
+  fill: #808080; }
+.dc-chart g.deselected text {
+  display: none; }
+.dc-chart g.row rect {
+  fill-opacity: 0.8;
+  cursor: pointer; }
+.dc-chart g.row rect:hover {
+    fill-opacity: 0.6; }
+.dc-chart g.row text {
+  fill: #fff;
+  font-size: 12px;
+  cursor: pointer; }
+.dc-chart g.dc-tooltip path {
+  fill: none;
+  stroke: #808080;
+  stroke-opacity: .8; }
+.dc-chart g.county path {
+  stroke: #fff;
+  fill: none; }
+.dc-chart g.debug rect {
+  fill: #00f;
+  fill-opacity: .2; }
+.dc-chart g.axis text {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  pointer-events: none; }
+.dc-chart .node {
+  font-size: 0.7em;
+  cursor: pointer; }
+.dc-chart .node :hover {
+    fill-opacity: .8; }
+.dc-chart .bubble {
+  stroke: none;
+  fill-opacity: 0.6; }
+.dc-chart .highlight {
+  fill-opacity: 1;
+  stroke-opacity: 1; }
+.dc-chart .fadeout {
+  fill-opacity: 0.2;
+  stroke-opacity: 0.2; }
+.dc-chart .box text {
+  font: 10px sans-serif;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  pointer-events: none; }
+.dc-chart .box line, .dc-chart .box circle {
+  fill: #fff; }
+.dc-chart .box rect, .dc-chart .box line, .dc-chart .box circle {
+  stroke: #000;
+  stroke-width: 1.5px; }
+.dc-chart .box .center {
+  stroke-dasharray: 3, 3; }
+.dc-chart .box .outlier {
+  fill: none;
+  stroke: #ccc; }
+.dc-chart .box.deselected {
+  opacity: 0.5; }
+.dc-chart .box.deselected .box {
+    fill: #ccc; }
+.dc-chart .symbol {
+  stroke: none; }
+.dc-chart .heatmap .box-group.deselected rect {
+  stroke: none;
+  fill-opacity: 0.5;
+  fill: #ccc; }
+.dc-chart .heatmap g.axis text {
+  pointer-events: all;
+  cursor: pointer; }
+.dc-chart .empty-chart .pie-slice {
+  cursor: default; }
+.dc-chart .empty-chart .pie-slice path {
+    fill: #fee;
+    cursor: default; }
+.dc-chart circle.dot {
+  stroke: none; }
+.dc-data-count {
+  float: right;
+  margin-top: 15px;
+  margin-right: 15px; }
+.dc-data-count .filter-count, .dc-data-count .total-count {
+    color: #3182bd;
+    font-weight: bold; }
+.dc-legend {
+  font-size: 11px; }
+.dc-legend .dc-legend-item {
+    cursor: pointer; }
+.dc-hard .number-display {
+  float: none; }
+/* z-index utils */
+.z1 { z-index: 1; }
+.z2 { z-index: 2; }
+.z3 { z-index: 3; }
+.z4 { z-index: 4; }
+.z5 { z-index: 5; }
+.z6 { z-index: 6; }
+.zF { z-index: 999; }
+.tippy-box[data-animation=fade][data-state=hidden]{opacity:0}
+[data-tippy-root]{max-width:calc(100vw - 10px)}
+.tippy-box{position:relative;background-color:#333;color:#fff;border-radius:4px;font-size:14px;line-height:1.4;white-space:normal;outline:0;transition-property:transform,visibility,opacity}
+.tippy-box[data-placement^=top]>.tippy-arrow{bottom:0}
+.tippy-box[data-placement^=top]>.tippy-arrow:before{bottom:-7px;left:0;border-width:8px 8px 0;border-top-color:currentColor;border-top-color:initial;transform-origin:center top}
+.tippy-box[data-placement^=bottom]>.tippy-arrow{top:0}
+.tippy-box[data-placement^=bottom]>.tippy-arrow:before{top:-7px;left:0;border-width:0 8px 8px;border-bottom-color:currentColor;border-bottom-color:initial;transform-origin:center bottom}
+.tippy-box[data-placement^=left]>.tippy-arrow{right:0}
+.tippy-box[data-placement^=left]>.tippy-arrow:before{border-width:8px 0 8px 8px;border-left-color:currentColor;border-left-color:initial;right:-7px;transform-origin:center left}
+.tippy-box[data-placement^=right]>.tippy-arrow{left:0}
+.tippy-box[data-placement^=right]>.tippy-arrow:before{left:-7px;border-width:8px 8px 8px 0;border-right-color:currentColor;border-right-color:initial;transform-origin:center right}
+.tippy-box[data-inertia][data-state=visible]{transition-timing-function:cubic-bezier(.54,1.5,.38,1.11)}
+.tippy-arrow{width:16px;height:16px;color:#333}
+.tippy-arrow:before{content:"";position:absolute;border-color:transparent;border-style:solid}
+.tippy-content{position:relative;padding:5px 9px;z-index:1}
+.Button {
+  display: inline-block;
+  box-sizing: border-box;
+  text-decoration: none;
+  padding: 0.5rem 0.75rem;
+  background: transparent;
+  border: 1px solid rgb(242, 236, 236);
+  color: #4c5773;
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: bold;
+  font-family: var(--default-font-family), sans-serif;
+  border-radius: 6px;
+}
+.Button:hover {
+  color: #509ee3;
+  border-color: rgb(224, 236, 236);
+  background: #f9fbfc;
+  transition: all 200ms linear;
+  transition-property: color, border-color, background-color;
+}
+.Button:focus {
+  outline: 2px solid #cbe2f7;
+}
+.Button:focus:not(:focus-visible) {
+  outline: none;
+}
+@media screen and (min-width: 80em) {
+  .Button {
+    padding: 0.75rem 1rem;
+  }
+}
+.Button--small {
+  padding: 0.45rem 1rem;
+}
+.Button--medium {
+  padding: 0.5rem 0.75rem;
+  font-size: 0.8rem;
+}
+.Button--large {
+  padding: 0.8rem 1.25rem;
+  font-size: 1rem;
+}
+.Button-normal {
+  font-weight: normal;
+}
+.Button--round {
+  border-radius: 99px;
+}
+.Button--primary {
+  color: #ffffff;
+  background: #509ee3;
+  border: 1px solid #509ee3;
+}
+.Button--primary:hover {
+  color: #ffffff;
+  border-color: #509ee3;
+  background-color: rgba(80, 158, 227, 0.88);
+}
+.Button--warning {
+  color: #ffffff;
+  background: #ed6e6e;
+  border: 1px solid #ed6e6e;
+}
+.Button--warning:hover {
+  color: #ffffff;
+  border-color: #ed6e6e;
+  background-color: #ed6e6e;
+}
+.Button--cancel {
+  border-radius: 99px;
+}
+.Button--white {
+  background-color: white;
+  color: #4c5773;
+  border-color: #eeecec;
+}
+.Button--borderless {
+  border-color: transparent;
+  background: transparent;
+  color: #696e7b;
+}
+.Button--borderless:hover {
+  border-color: transparent;
+  color: #696e7b;
+}
+.Button--onlyIcon {
+  border: none;
+  background: transparent;
+  color: #4c5773;
+  padding: 0;
+}
+.Button-group {
+  display: inline-block;
+  border-radius: 6px;
+  border: 1px solid #eeecec;
+  overflow: hidden;
+  clear: both;
+}
+.Button-group .Button {
+  margin: 0;
+  float: left;
+  border-top: none;
+  border-bottom: none;
+  border-right: none;
+  border-radius: 0;
+  box-shadow: none;
+}
+.Button-group .Button--active {
+  background-color: #84bb4c;
+  color: #ffffff;
+}
+.Button-group .Button:first-child {
+  border-left: none;
+}
+.Button-group--blue {
+  border-color: #eeecec;
+}
+.Button-group--blue .Button {
+  color: #696e7b;
+}
+.Button-group--blue .Button--active {
+  background-color: #edf2f5;
+  color: #509ee3;
+}
+.Button-group--brand {
+  border-color: white;
+}
+.Button-group--brand .Button {
+  border-color: white;
+  color: #509ee3;
+  background-color: #edf2f5;
+}
+.Button-group--brand .Button--active {
+  background-color: #509ee3;
+  color: white;
+}
+.Button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.Button--selected,
+.Button--selected:hover {
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.13);
+  background-color: #f9fbfc;
+}
+.Button--danger {
+  background-color: #ed6e6e;
+  border-color: #ed6e6e;
+  color: #ffffff;
+}
+.Button--danger:hover {
+  color: white;
+  background-color: #ed6e6e;
+  border-color: #ed6e6e;
+}
+.Button--success {
+  background-color: #84bb4c;
+  border-color: #84bb4c;
+  color: #ffffff;
+}
+.Button--success:hover {
+  background-color: #84bb4c;
+  border-color: #84bb4c;
+  color: #ffffff;
+}
+.Button--withIcon {
+  line-height: 1;
+}
+.Button--fullWidth {
+  width: 100%;
+}
+::-webkit-input-placeholder {
+  color: #949aab;
+}
+:-moz-placeholder {
+  color: #949aab;
+}
+:-ms-input-placeholder {
+  color: #949aab;
+}
+.Form-field {
+  margin-bottom: 1.5em;
+  color: #696e7b;
+}
+.Form-field.Form--fieldError {
+  color: #ed6e6e;
+}
+.Form-label {
+  display: block;
+  font-weight: 900;
+  font-size: 0.88em;
+  color: inherit;
+  margin-bottom: 0.5em;
+}
+.Form-input {
+  font-family: var(--default-font-family);
+  font-weight: 700;
+  font-size: 16px;
+  color: #4c5773;
+  background-color: #ffffff;
+  padding: 0.75em;
+}
+.Form-input,
+.Form-input-border {
+  border: 1px solid #eeecec;
+  border-radius: 8px;
+  outline: none;
+}
+.Form-field.Form--fieldError .Form-input {
+  border-color: #ed6e6e;
+}
+.Form-input:focus:not(.no-focus),
+.Form-field:hover .Form-input:not(.no-focus) {
+  border-color: #509ee3;
+  transition: border 300ms ease-in-out;
+}
+.Form-field .AdminSelect {
+  border-color: #eeecec;
+}
+.Form-field .AdminSelect:hover {
+  border-color: #509ee3;
+  transition: border 300ms ease-in-out;
+}
+.Header-title {
+  width: 455px;
+}
+.Header-title-name {
+  font-size: 1.24em;
+  color: #4c5773;
+}
+.IconWrapper {
+  font-size: 0;
+}
+.Logo .Icon {
+  width: 33px;
+  height: 42.5px;
+}
+@media screen and (min-width: 60em) {
+  .Logo .Icon {
+    width: 66px;
+    height: 85px;
+  }
+}
+.List {
+  padding: 0.5rem;
+}
+.List-section-header .Icon,
+.List-item .List-item-arrow .Icon {
+  color: #4c5773;
+}
+.List-section-header:hover .Icon {
+  color: inherit;
+}
+.List-item .Icon {
+  color: #949aab;
+}
+.List-section-header {
+  color: #4c5773;
+  border: 2px solid transparent;
+  /* so that spacing matches .List-item */
+}
+.List-section-header--cursor {
+  border-radius: 8px;
+  outline: 2px solid #cbe2f7;
+  outline-offset: -4px;
+}
+.List-section--cursor {
+  background-color: rgba(148, 154, 171, 0.2);
+}
+/* these crazy rules are needed to get currentColor to propagate to the right elements in the right states */
+.List-section--togglable .List-section-header:hover,
+.List-section--togglable .List-section-header:hover .Icon,
+.List-section--togglable .List-section-header:hover .List-section-title,
+.List-section--expanded .List-section-header,
+.List-section--expanded .List-section-header .List-section-icon .Icon {
+  color: currentColor;
+}
+.List-section--expanded .List-section-header .List-section-title {
+  color: #4c5773;
+}
+.List-section-title {
+  word-wrap: break-word;
+}
+/* LIST ITEM */
+.List-item {
+  display: flex;
+  border-radius: 4px;
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+.List-item--cursor {
+  outline: 2px solid #cbe2f7;
+}
+.List-item--cursor:not(.List-item--disabled),
+.List-item:not(.List-item--disabled):hover,
+.List-item--selected:not(.List-item--disabled) {
+  background-color: currentColor;
+}
+/* LIST ITEM TITLE */
+.List-item-title {
+  color: #4c5773;
+}
+.List-item--disabled .List-item-title {
+  color: #696e7b;
+}
+.List-item--cursor:not(.List-item--disabled) .List-item-title,
+.List-item:not(.List-item--disabled):hover .List-item-title,
+.List-item--selected:not(.List-item--disabled) .List-item-title {
+  color: white;
+}
+/* LIST ITEM DESCRIPTION */
+.List-item-description {
+  margin-top: 0.25em;
+  margin-bottom: 0;
+  color: #696e7b;
+}
+.List-item--disabled .List-item-description {
+  color: #4c5773;
+}
+.List-item--cursor:not(.List-item--disabled) .List-item-description,
+.List-item:not(.List-item--disabled):hover .List-item-description,
+.List-item--selected:not(.List-item--disabled) .List-item-description {
+  color: rgba(255, 255, 255, 0.5);
+}
+/* LIST ITEM ICON */
+.List-item--cursor:not(.List-item--disabled) .Icon,
+.List-item:not(.List-item--disabled):hover .Icon,
+.List-item--selected:not(.List-item--disabled) .Icon {
+  color: white !important;
+}
+.ModalContainer {
+  z-index: 4;
+}
+.Modal {
+  margin: auto;
+  width: 640px;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.13);
+  max-height: 90%;
+  overflow-y: auto;
+}
+/* On IE11, single flex item with `margin: auto` gets shifted to flex end
+ * https://github.com/philipwalton/flexbugs/issues/157
+ * Set margin to zero when using Flexbox in `WindowModal` component
+ */
+.Modal-backdrop > .Modal {
+  margin: 0;
+}
+.Modal.Modal--small {
+  width: 480px;
+}
+/* TODO - why is this one px? */
+.Modal.Modal--medium {
+  width: 65%;
+}
+.Modal.Modal--wide {
+  width: 85%;
+}
+.Modal.Modal--fit {
+  width: auto;
+  max-height: 100%;
+}
+.Modal.Modal--tall {
+  min-height: 85%;
+}
+.Modal--full {
+  background-color: white;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 3;
+}
+.Modal-backdrop {
+  background-color: rgba(46, 53, 59, 0.6);
+}
+/* TRANSITIONS */
+/* backdrop */
+.Modal-backdrop.Modal-appear,
+.Modal-backdrop.Modal-enter {
+  background-color: rgba(46, 53, 59, 0.01);
+}
+.Modal-backdrop.Modal-appear-active,
+.Modal-backdrop.Modal-enter-active {
+  transition: background-color 200ms ease-in-out;
+  background-color: rgba(46, 53, 59, 0.6);
+}
+.Modal-backdrop.Modal-exit {
+  background-color: rgba(46, 53, 59, 0.6);
+}
+.Modal-backdrop.Modal-exit-active {
+  transition: background-color 200ms ease-in-out 100ms;
+  background-color: rgba(46, 53, 59, 0.01);
+}
+/* modal */
+.Modal-backdrop.Modal-appear .Modal,
+.Modal-backdrop.Modal-enter .Modal {
+  opacity: 0.01;
+  transform: translate(0, 40px);
+}
+.Modal-backdrop.Modal-appear-active .Modal,
+.Modal-backdrop.Modal-enter-active .Modal {
+  transition: opacity 200ms linear 100ms, transform 200ms ease-in-out 100ms;
+  opacity: 1;
+  transform: translate(0, 0);
+}
+.Modal-backdrop.Modal-exit .Modal {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+.Modal-backdrop.Modal-exit-active .Modal {
+  transition: opacity 200ms linear, transform 200ms ease-in-out;
+  opacity: 0.01;
+  transform: translate(0, -40px);
+}
+@media (prefers-reduced-motion) {
+  .Modal-backdrop.Modal-appear,
+  .Modal-backdrop.Modal-enter,
+  .Modal-backdrop.Modal-exit,
+  .Modal-backdrop.Modal-appear .Modal,
+  .Modal-backdrop.Modal-enter .Modal,
+  .Modal-backdrop.Modal-exit .Modal {
+    transition: none;
+  }
+}
+/*
+  explicitly set the th text alignment to left. this is required for IE
+  which follows the suggested rendering and defaults to center, whereas
+  chrome and others do not
+*/
+th {
+  text-align: left;
+}
+.Table {
+  /* standard table reset */
+  border-collapse: collapse;
+  border-spacing: 0;
+
+  width: 100%;
+
+  font-family: "Helvetica Neue", "Helvetica", sans-serif;
+  font-size: 0.76rem;
+  line-height: 0.76rem;
+  text-align: left;
+}
+.Table--bordered {
+  border: 1px solid rgba(238, 236, 236, 0.3);
+}
+.Table tr {
+  border-bottom: 1px solid rgba(238, 236, 236, 0.3);
+}
+.Table tr:nth-child(even) {
+  background-color: rgba(46, 53, 59, 0.02);
+}
+.Table th,
+.Table td {
+  padding: 1em;
+  border: 1px solid rgba(238, 236, 236, 0.3);
+}
+.ComparisonTable {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+.ComparisonTable th,
+.ComparisonTable td {
+  border-bottom: 1px solid #eeecec;
+}
+.tippy-content {
+  white-space: pre-wrap;
+}
+.Grabber {
+  /* This image is a svg circle as a data url.
+     We tile it for the whole div. */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle fill='%23E3E7E9' r='1.5' cx='2.5' cy='2.5' /%3E%3C/svg%3E");
+  background-repeat: round round;
+  background-size: 5px 5px;
+}
+/* .sort-helper isn't used in <Grabber>. You'll need to set that on a parent being sorted. */
+.ColumnSortHelper .Grabber,
+.Grabber:hover {
+  /* This image is the same but with a different fill color. */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle fill='%23C7CFD4' r='1.5' cx='2.5' cy='2.5' /%3E%3C/svg%3E");
+}
+/* This should be applied on document.body during dragging. */
+.grabbing {
+  cursor: grabbing;
+}
+.grabbing * {
+  cursor: grabbing;
+}
+@media screen and (min-width: 60em) {
+  .Entity-search-back-button {
+    position: absolute;
+    margin-left: -150px;
+  }
+
+  .Entity-search-grouping-options {
+    position: absolute;
+    margin-left: -150px;
+    margin-top: 22px;
+  }
+}
+@media screen and (max-width: 60em) {
+  .Entity-search-grouping-options {
+    display: flex;
+    align-items: center;
+  }
+  .Entity-search-grouping-options > h3 {
+    margin-bottom: 0;
+    margin-right: 20px;
+  }
+  .Entity-search-grouping-options > ul {
+    display: flex;
+  }
+  .Entity-search-grouping-options > ul > li {
+    margin-right: 10px;
+  }
+}
+.Entity-search input {
+  width: 100%;
+}
+/* utility to get a simple common hover state for admin items */
+.HoverItem:hover {
+  background-color: #edf2f5;
+  transition: background 0.2s linear;
+}
+.ContentTable {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  text-align: left;
+}
+.ContentTable thead {
+  border-bottom: 1px solid #eeecec;
+}
+.PageHeader {
+  padding-top: 2.375rem;
+  padding-bottom: 2.375rem;
+}
+.PageTitle {
+  margin: 0;
+}
+.Table-actions {
+  text-align: right;
+}
+.ContentTable .Table-actions {
+  opacity: 0;
+}
+.ContentTable td,
+.ContentTable th {
+  padding: 1em;
+}
+.ContentTable th {
+  color: #4c5773;
+  padding: 1em;
+}
+/* TODO: remove this and apply AdminHoverItem to content rows */
+.ContentTable tbody tr:hover {
+  background-color: rgba(80, 158, 227, 0.04);
+}
+.ContentTable tr:hover .Table-actions {
+  opacity: 1;
+  transition: opacity 0.2s linear;
+}
+.AdminList {
+  background-color: #f9fbfc;
+  border: 1px solid #eeecec;
+  border-radius: 8px;
+  width: 266px;
+  box-shadow: inset -1px -1px 3px rgba(0, 0, 0, 0.13);
+  padding-bottom: 0.75em;
+}
+.AdminList-search {
+  position: relative;
+}
+.AdminList-search .Icon {
+  position: absolute;
+  margin-top: auto;
+  margin-bottom: auto;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  margin-left: 1em;
+  color: #949aab;
+}
+.AdminList-search .AdminInput {
+  padding: 0.5em;
+  padding-left: 2em;
+  font-size: 18px;
+  width: 100%;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  border-bottom-color: #eeecec;
+}
+.AdminList-item {
+  padding: 0.75em 1em 0.75em 1em;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  margin-bottom: 0.25em;
+}
+.AdminList-item.selected {
+  color: #509ee3;
+}
+.AdminList-item.selected,
+.AdminList-item:hover {
+  background-color: white;
+  border-color: #eeecec;
+  margin-left: -0.5em;
+  margin-right: -0.5em;
+  padding-left: 1.5em;
+  padding-right: 1.5em;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.13);
+}
+.AdminList-section {
+  margin-top: 1em;
+  padding: 0.5em 1em 0.5em 1em;
+  text-transform: uppercase;
+  color: #949aab;
+  font-weight: 700;
+  font-size: smaller;
+  padding-right: 15px; /* set so that table visibility icons align */
+}
+.AdminInput {
+  color: #4c5773;
+  padding: 0.5rem;
+  background-color: #f9fbfc;
+  border: 1px solid transparent;
+}
+.AdminInput:focus {
+  border-color: #509ee3;
+  box-shadow: none;
+  outline: 0;
+}
+.AdminSelect {
+  display: inline-block;
+  padding: 0.6em 0.9em;
+  border: 1px solid #eeecec;
+  background-color: #ffffff;
+  border-radius: 8px;
+  font-weight: 700;
+  min-width: 104px;
+}
+.AdminSelect:hover {
+  border-color: rgb(230, 236, 236);
+}
+.AdminSelectBorderless {
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 3px;
+}
+.AdminSelect--borderless {
+  border: none !important;
+}
+.AdminSelect--borderless .AdminSelect-content {
+  margin-left: auto;
+}
+.AdminSelect--borderless .AdminSelect-chevron {
+  margin-left: 0;
+}
+.AdminSelect-chevron {
+  opacity: 0.75;
+}
+.AdminSelect:hover .AdminSelect-chevron {
+  opacity: 1;
+}
+.MetadataTable {
+  min-width: 800px;
+}
+.MetadataTable-title {
+  background-color: #ffffff;
+}
+.TableEditor-table-name {
+  font-size: 24px;
+}
+.TableEditor-field-name {
+  font-size: 16px;
+}
+.TableEditor-table-description,
+.TableEditor-field-description {
+  font-size: 14px;
+}
+.TableEditor-field-visibility {
+  /*color: var(--color-warning);*/
+}
+.TableEditor-field-visibility .ColumnarSelector-row:hover {
+  background-color: #509ee3 !important;
+  color: white !important;
+}
+.TableEditor-field-type .ColumnarSelector-row:hover {
+  background-color: #509ee3 !important;
+  color: white !important;
+}
+.TableEditor-field-semantic-type,
+.TableEditor-field-target {
+  margin-top: 3px;
+}
+.TableEditor-field-semantic-type .ColumnarSelector-row:hover,
+.TableEditor-field-target .ColumnarSelector-row:hover {
+  background-color: #509ee3 !important;
+  color: white !important;
+}
+.SaveStatus {
+  line-height: 1;
+}
+.SaveStatus:last-child {
+  border-right: none !important;
+}
+.SettingsInput {
+  width: 400px;
+}
+.SettingsPassword {
+  width: 200px;
+}
+.UserActionsSelect {
+  min-width: 180px;
+}
+.AdminTable {
+  border-collapse: collapse;
+  border-spacing: 0;
+  text-align: left;
+}
+.AdminTable th {
+  text-transform: uppercase;
+  color: #696e7b;
+  padding: 0.5rem;
+  font-weight: normal;
+}
+.AdminTable thead {
+  border-bottom: 1px solid #eeecec;
+}
+.AdminTable tbody tr:first-child td {
+  padding-top: 0.5rem;
+}
+.AdminLink {
+  opacity: 0.435;
+}
+.AdminLink:hover {
+  opacity: 1;
+}
+.ColumnSortHelper {
+  box-shadow: 0 7px 20px rgba(0, 0, 0, 0.13);
+}
+#formField-details-password .Form-input {
+  margin-bottom: 2em;
+}
+.Card {
+  position: relative;
+}
+.Card-footing {
+  font-size: 0.8rem;
+  color: #696e7b;
+}
+.Card-title {
+  color: #4c5773;
+  font-size: 0.8em;
+}
+.Card-dataSource {
+  color: #696e7b;
+  padding-top: 0.5em;
+}
+.Card-defaultBox {
+  height: 500px;
+}
+@media screen and (min-width: 60em) {
+  .Card-title {
+    font-size: 0.8em;
+  }
+}
+.Card--errored {
+  min-height: 80px;
+}
+.Card-scalarValue {
+  overflow: hidden;
+}
+@media screen and (min-width: 80em) {
+  .Card-scalarValue {
+    font-size: 2.4em;
+  }
+}
+@media screen and (min-width: 120em) {
+  .Card-scalarValue {
+    font-size: 3.4em;
+  }
+}
+.CardSettings-group {
+  border-bottom: 1px solid #eeecec;
+}
+.CardSettings-groupTitle {
+  padding: 0.5em;
+  border-bottom: 1px solid #eeecec;
+}
+.CardSettings-content {
+  padding: 2em;
+  background-color: #ffffff;
+}
+.CardSettings {
+  border-top: 1px solid #eeecec;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.13);
+}
+.CardSettings-label {
+  font-size: 1.15em;
+  margin-left: 0.5em;
+  color: #4c5773;
+}
+.CardSettings-colorBlock {
+  display: inline-block;
+  width: 2.5em;
+  height: 2.5em;
+  margin-right: 1em;
+  border-radius: 4px;
+}
+.CardSettings-colorBlock:last-child {
+  margin-right: 0;
+}
+.Card--scalar {
+  padding: 1em;
+}
+.Dash-wrapper {
+  width: 100%;
+}
+@media screen and (min-width: 40em) {
+  .Dash-wrapper {
+    max-width: 752px;
+  }
+}
+@media screen and (min-width: 60em) {
+  .Dash-wrapper {
+    max-width: 940px;
+  }
+}
+@media screen and (min-width: 80em) {
+  .Dash-wrapper {
+    max-width: 1140px;
+  }
+}
+/* Fullscreen mode */
+.Dashboard.Dashboard--fullscreen {
+  min-height: 100vh;
+  height: auto;
+}
+.Dashboard.Dashboard--fullscreen .Header-button {
+  color: #949aab;
+}
+.Dashboard.Dashboard--fullscreen .Header-title-description {
+  display: none;
+}
+/* Night mode */
+.Dashboard.Dashboard--night {
+  background-color: #2e353b;
+}
+.Dashboard.Dashboard--night .Card {
+  color: #ffffff;
+}
+.Dashboard.Dashboard--night .Header-button {
+  color: #696e7b;
+}
+.Dashboard.Dashboard--fullscreen .fullscreen-normal-text {
+  color: #4c5773;
+  transition: color 1s linear;
+}
+.Dashboard.Dashboard--night.Dashboard--fullscreen .fullscreen-night-text {
+  color: rgba(255, 255, 255, 0.86);
+  transition: color 1s linear;
+}
+.Dashboard.Dashboard--night .DashCard .Card svg text {
+  fill: rgba(255, 255, 255, 0.86) !important;
+  stroke: none !important;
+}
+.Dashboard.Dashboard--night .enable-dots-onhover .dc-tooltip circle.dot:hover,
+.Dashboard.Dashboard--night .enable-dots .dc-tooltip circle.dot {
+  fill: currentColor;
+}
+.Dashboard.Dashboard--night .bg-light {
+  background-color: #2e353b;
+}
+.Dashboard.Dashboard--night .bg-medium {
+  background-color: #596269;
+}
+.Dashboard.Dashboard--night .text-dark {
+  color: #f9fbfc;
+}
+.Dashboard.Dashboard--night .border-top,
+.Dashboard.Dashboard--night .border-left,
+.Dashboard.Dashboard--night .border-bottom,
+.Dashboard.Dashboard--night .border-right {
+  border-color: #93a1ab;
+}
+/* Night mode transition */
+.Dashboard.Dashboard--fullscreen,
+.Dashboard.Dashboard--fullscreen .DashCard .Card {
+  transition: background-color 1s linear, border 1s linear;
+}
+.Dash--editing {
+  margin-top: 1.5em;
+}
+.DashCard {
+  position: relative;
+  z-index: 2;
+}
+.DashCard .Card {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+.Dash--editing .DashCard .Card {
+  transition: border 0.3s, background-color 0.3s;
+}
+.Dash--editing .Card-title:first-of-type {
+  margin-top: 0.5rem;
+}
+.Dash--editing .DashCard:hover .Card .Card-heading {
+  z-index: 2;
+}
+/* Google Maps widgets */
+.DashCard .gm-style-mtc,
+.DashCard .gm-bundled-control,
+.DashCard .PinMapUpdateButton,
+.leaflet-container .leaflet-control-container {
+  opacity: 0.01;
+  transition: opacity 0.3s linear;
+}
+.DashCard:hover .gm-style-mtc,
+.DashCard:hover .gm-bundled-control,
+.DashCard:hover .PinMapUpdateButton,
+.leaflet-container:hover .leaflet-control-container {
+  opacity: 1;
+}
+.Dash--editing .PinMap {
+  /* allow map to pan. need to stopPropagation in PinMap to prevent weird dragging interaction */
+  pointer-events: all;
+}
+.PinMapUpdateButton--disabled {
+  pointer-events: none;
+  color: #949aab;
+}
+.DashCard .Card {
+  border-radius: 8px;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.13);
+}
+@media (prefers-reduced-motion) {
+  /* short duration (instead of none) to still trigger transition events */
+  .DashCard {
+    transition-duration: 10ms !important;
+  }
+}
+.Dash--editing .DashCard.react-draggable-dragging .Card {
+  box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.13);
+}
+.BrandColorResizeHandle .react-resizable-handle:after {
+  border-color: #509ee3 !important;
+}
+.Dash--editing .DashCard.react-draggable-dragging,
+.Dash--editing .DashCard.react-resizable-resizing {
+  z-index: 3;
+}
+.Dash--editing .DashCard.react-draggable-dragging .Card,
+.Dash--editing .DashCard.react-resizable-resizing .Card {
+  background-color: #edf2f5 !important;
+  border: 1px solid #509ee3;
+}
+.Dash--editing .DashCard .Visualization-slow-spinner {
+  position: absolute;
+  right: -2px;
+  top: -2px;
+}
+.Dash--editing .DashCard:hover .Visualization-slow-spinner {
+  opacity: 0;
+  transition: opacity 0.15s linear;
+}
+.Dash--editing .DashCard {
+  cursor: move;
+}
+.Dash--editing .DashCard .react-resizable-handle {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  bottom: 0;
+  right: 0;
+  z-index: 1; /* ensure the handle is above the card contents */
+
+  /* overwrites the style coming from react-grid-layout */
+  cursor: nwse-resize !important;
+  background: none; /* hide default RGL's resize handle */
+}
+.Dash--editing .DashCard .react-resizable-handle:after {
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  bottom: 6px;
+  right: 6px;
+  border-bottom: 2px solid #eeecec;
+  border-right: 2px solid #eeecec;
+  border-bottom-right-radius: 2px;
+  transition: opacity 0.2s;
+  opacity: 0.01;
+}
+.Dash--editing .DashCard .react-resizable-handle:hover:after {
+  border-color: #eeecec;
+}
+.Dash--editing .DashCard:hover .react-resizable-handle:after {
+  opacity: 1;
+}
+.Dash--editing .DashCard.react-draggable-dragging .react-resizable-handle:after,
+.Dash--editing
+  .DashCard.react-resizable-resizing
+  .react-resizable-handle:after {
+  opacity: 0.01;
+}
+.Dash--editing .react-grid-placeholder {
+  z-index: 0;
+  background-color: #f9fbfc !important;
+  transition: all 0.15s linear;
+}
+.Dash--editing .Card-title {
+  pointer-events: none;
+}
+.Modal.AddSeriesModal {
+  height: 80%;
+  max-height: 600px;
+  width: 80%;
+  max-width: 1024px;
+}
+/*
+
+  fullscreen text size modifications
+
+*/
+/*
+  increase the base font size in fullscreen mode to bump things up to
+  accomodate for viewing distance on TVs etc
+*/
+@media screen and (min-width: 1280px) {
+  .Dashboard.Dashboard--fullscreen {
+    font-size: 1.2em;
+  }
+  /* keep the dashboard header title from being overwhelmingly large */
+  .Dashboard.Dashboard--fullscreen .Header-title-name {
+    font-size: 1em;
+  }
+  /* keep the single row text cards to avoid overflow with a scroll bar */
+  .Dashboard.Dashboard--fullscreen .Text--single-row {
+    font-size: 0.85em;
+  }
+  .Dashboard.Dashboard--fullscreen .fullscreen-text-small .LegendItem {
+    font-size: 1em;
+  }
+}
+@media screen and (min-width: 1540px) {
+  .Dashboard.Dashboard--fullscreen {
+    font-size: 1.4em;
+  }
+}
+/* what for to print the dashboards */
+@media print {
+  header,
+  nav {
+    display: none;
+  }
+  /* improve label contrast */
+  .dc-chart .axis .tick text,
+  .dc-chart .x-axis-label,
+  .dc-chart .y-axis-label {
+    fill: #4c5773;
+  }
+}
+@page {
+  margin: 1cm;
+}
+/* when in night mode goal lines should be more visible */
+.Dashboard--night .goal .line,
+.Dashboard--night .trend .line {
+  stroke: white;
+}
+/* when in night mode code snippets should have a more readable background-color */
+.Dashboard--night pre code {
+  background-color: rgba(255, 255, 255, 0.14);
+}
+.Dashboard--night .text-card-markdown code {
+  background-color: rgba(255, 255, 255, 0.14);
+}
+.Dashboard text.value-label,
+.Dashboard text.value-label-white,
+.Dashboard .LineAreaBarChart .dc-chart .axis text {
+  font-size: 12px;
+}
+.ScalarValue {
+  font-weight: 900;
+  white-space: pre;
+}
+.SmartWrapper {
+  font-size: 1.4em;
+}
+.Dashboard .SmartWrapper {
+  position: relative;
+  font-size: inherit;
+}
+.AutomaticDashboard.AutomaticDashboard--withSidebar #SmartScalar-PreviousValue {
+  display: none !important;
+}
+@media screen and (min-width: 1280px) {
+  .AutomaticDashboard.AutomaticDashboard--withSidebar
+    #SmartScalar-PreviousValue {
+    display: none;
+  }
+}
+@media screen and (min-width: 1540px) {
+  .AutomaticDashboard.AutomaticDashboard--withSidebar
+    #SmartScalar-PreviousValue {
+    display: inherit;
+  }
+}
+/*
+ * Override d3 styles so the chart axis labels are selectable. See issue #17613
+ */
+.dc-chart g.axis g.tick text {
+  pointer-events: all;
+  -webkit-user-select: auto;
+     -moz-user-select: auto;
+      -ms-user-select: auto;
+          user-select: auto;
+}
+.Nav {
+  z-index: 4;
+  flex-shrink: 0;
+}
+.QuestionCircle {
+  display: inline-block;
+  font-size: 3.25rem;
+  width: 73px;
+  height: 73px;
+  border-radius: 99px;
+  border: 3px solid currentcolor;
+  text-align: center;
+  line-height: normal;
+}
+.break-word {
+  word-wrap: break-word;
+}
+.tooltip {
+  position: absolute;
+  background-color: #ffffff;
+  border-radius: 2px;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.13);
+  color: #949aab;
+}
+.Layout-sidebar {
+  min-height: 100vh;
+  width: 346px;
+  background-color: #f9fbfc;
+  border-left: 2px solid #eeecec;
+}
+.Layout-mainColumn {
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.Sidebar-header {
+  font-size: 13px;
+  letter-spacing: 0.5px;
+  line-height: 1;
+  text-transform: uppercase;
+}
+.PulseEdit-header,
+.PulseEdit-footer {
+  width: 100%;
+  margin: 0 auto;
+  padding-left: 180px;
+  padding-right: 180px;
+}
+.PulseEdit-content {
+  max-width: 550px;
+  margin-left: 180px;
+}
+.PulseButton {
+  color: #696e7b;
+  font-weight: 700;
+  border-width: 2px;
+  border-color: #eeecec;
+}
+.PulseEdit .input,
+.PulseEdit .bordered,
+.PulseEdit .border-bottom,
+.PulseEdit .border-row-divider,
+.PulseEdit .AdminSelect {
+  border-width: 2px;
+  border-color: #eeecec;
+}
+.PulseEdit .AdminSelect {
+  padding: 1em;
+}
+.PulseEdit .input:focus,
+.PulseEdit .input--focus {
+  border-width: 2px;
+  border-color: #509ee3 !important;
+}
+.PulseListItem button {
+  font-family: var(--default-font-family), Helvetica, sans-serif;
+}
+.PulseEditButton {
+  opacity: 0;
+  transition: opacity 0.3s linear;
+}
+.PulseListItem {
+  overflow: hidden;
+}
+.PulseListItem:hover .PulseEditButton {
+  opacity: 1;
+}
+.PulseListItem.PulseListItem--focused {
+  border-color: #509ee3;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.13);
+}
+.Modal.WhatsAPulseModal {
+  width: auto;
+}
+#react_qb_viz {
+  flex-grow: 1;
+}
+/* @layout */
+.QueryBuilder {
+  transition: margin-right 0.35s;
+}
+.QueryBuilder--showSideDrawer {
+  margin-right: 300px;
+}
+.QueryHeader-details {
+  display: flex;
+  align-items: center;
+}
+/* a section of the graphical query itself */
+.Query-section {
+  display: flex;
+  align-items: center;
+}
+.Query-section.Query-section--right {
+  justify-content: flex-end;
+}
+.QueryName {
+  font-weight: 200;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 1.2rem;
+}
+.Query-label {
+  text-transform: uppercase;
+  font-size: 10px;
+  font-weight: 700;
+  color: #696e7b;
+}
+.Query-filters {
+  max-width: 400px;
+}
+.Query-filterList {
+  display: flex;
+  overflow-y: hidden;
+  white-space: nowrap;
+}
+.Filter-section {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+.Query-filter .input {
+  border-radius: 0;
+  border: none;
+  font-size: inherit;
+  background-color: transparent;
+  width: 150px;
+  padding: 0;
+}
+.TooltipFilterList .Query-filter {
+  padding-left: 0 !important;
+  padding-bottom: 0 !important;
+}
+.TooltipFilterList .Query-filterList {
+  flex-direction: column;
+}
+.TooltipFilterList .Query-section {
+  margin-left: -0.5rem;
+}
+/*
+    @selectionmodule
+*/
+.SelectionModule {
+  color: #509ee3;
+}
+.SelectionList {
+  padding-top: 5px;
+  overflow-y: auto;
+  max-height: 340px;
+}
+.SelectionItems {
+  max-width: 320px;
+}
+.SelectionItems.SelectionItems--open {
+  opacity: 1;
+  transition: opacity 0.3s linear;
+  pointer-events: all;
+}
+.SelectionItems.SelectionItems--expanded {
+  max-height: inherit;
+}
+.SelectionItem {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 0.75rem 1.5rem 0.75rem 0.75rem;
+  background-color: #ffffff;
+}
+.SelectionItem:hover {
+  background-color: currentColor;
+}
+.SelectionItem .Icon {
+  margin-left: 0.5rem;
+  margin-right: 0.75rem;
+  color: currentcolor;
+}
+.SelectionItem .Icon-check {
+  opacity: 0;
+}
+.SelectionItem .Icon-chevrondown {
+  opacity: 1;
+}
+.SelectionItem:hover .Icon {
+  color: #ffffff !important;
+}
+.SelectionItem:hover .SelectionModule-display {
+  color: #ffffff;
+}
+.SelectionItem:hover .SelectionModule-description {
+  color: #ffffff;
+}
+.SelectionItem.SelectionItem--selected .Icon-check {
+  opacity: 1;
+}
+.SelectionModule-display {
+  color: currentColor;
+  margin-bottom: 0.25em;
+}
+.SelectionModule-description {
+  color: #696e7b;
+  font-size: 0.8rem;
+}
+.Visualization {
+  transition: background 0.3s linear;
+}
+.Visualization.Visualization--loading {
+  transition: background 0.3s linear;
+}
+.Visualization.Visualization--error {
+  justify-content: center;
+}
+.Visualization--scalar {
+  justify-content: center;
+  font-size: 8rem;
+  font-weight: 200;
+}
+.Loading {
+  background-color: rgba(255, 255, 255, 0.72);
+  transition: opacity 0.5s;
+}
+.Loading.Loading--hidden {
+  background-color: transparent;
+}
+.Dirty {
+  background-color: rgba(255, 255, 255, 0.72);
+  transition: opacity 0.5s;
+}
+.Dirty.Loading--hidden {
+  background-color: transparent;
+}
+/* query errors */
+.QueryError {
+  flex-direction: column;
+  justify-content: center;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.QueryError-image {
+  background-repeat: no-repeat;
+  margin-bottom: 1rem;
+}
+.QueryError-image--noRows {
+  width: 120px;
+  height: 120px;
+  background-image: url(./5b037ccea09264fc34b1.svg);
+}
+.QueryError-image--queryError {
+  width: 120px;
+  height: 120px;
+  background-image: url(./9d080ef90f8ea6c37f6d.svg);
+}
+.QueryError-image--serverError {
+  width: 120px;
+  height: 148px;
+  background-image: url(./43418d8fbb63a30241da.svg);
+}
+.QueryError-image--timeout {
+  width: 120px;
+  height: 120px;
+  background-image: url(./8ae1ecba8fb3eb5bbe0b.svg);
+}
+.QueryError-messageText {
+  line-height: 1.4;
+}
+.QueryError-adminEmail {
+  position: relative;
+  display: inline-block;
+  border-radius: 8px;
+  border: 1px solid #eeecec;
+  margin-top: 1rem;
+  padding: 0.5rem 2rem 0.5rem 2rem;
+}
+.QueryError-adminEmail:before {
+  content: "Admin Email";
+  font-size: 10px;
+  text-align: center;
+  text-transform: uppercase;
+  background-color: white;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+
+  position: absolute;
+  top: -0.75em;
+  left: 50%;
+  margin-left: -41px; /* ugh */
+}
+.QueryError2 {
+  padding-top: 4rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+.QueryError2-details {
+  max-width: 500px;
+}
+.QueryError2-detailBody {
+  background-color: #f9fbfc;
+  max-height: 15rem;
+  overflow: auto;
+}
+/* GUI BUILDER */
+.GuiBuilder {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  font-size: 0.9em;
+  z-index: 2;
+  background-color: #ffffff;
+
+  border: 1px solid #eeecec;
+}
+/* for medium breakpoint only expand if data reference is not shown */
+@media screen and (min-width: 60em) {
+  .GuiBuilder {
+    font-size: 1em;
+  }
+}
+/* un-expanded (default) */
+.GuiBuilder-row {
+  border-bottom: 1px solid #eeecec;
+}
+.GuiBuilder-row:last-child {
+  border-bottom-color: transparent;
+}
+.GuiBuilder-data {
+  border-right: 1px solid #eeecec;
+}
+.GuiBuilder-filtered-by {
+  border-right: 1px solid transparent;
+}
+.GuiBuilder-view {
+  border-right: 1px solid #eeecec;
+}
+.GuiBuilder-sort-limit {
+  border-left: 1px solid #eeecec;
+}
+/* expanded */
+.GuiBuilder.GuiBuilder--expand {
+  flex-direction: row;
+}
+.GuiBuilder.GuiBuilder--expand .GuiBuilder-row:last-child {
+  border-right-color: transparent;
+  border-bottom-color: #eeecec;
+}
+.GuiBuilder.GuiBuilder--expand .GuiBuilder-filtered-by {
+  border-right-color: #eeecec;
+}
+.GuiBuilder-section {
+  position: relative;
+  min-height: 55px;
+  min-width: 100px;
+}
+.GuiBuilder-section-label {
+  background-color: white;
+  position: absolute;
+  top: -7px;
+  left: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+/* @transitions */
+.AddToDashSuccess {
+  max-width: 260px;
+  text-align: center;
+}
+/* DATA SECTION */
+.GuiBuilder-data {
+  z-index: 1; /* moved the arrow thingy above the filter outline */
+}
+/* FILTER BY SECTION */
+.Filter-section-sort-field.selected .QueryOption,
+.Filter-section-sort-direction.selected .QueryOption {
+  color: inherit;
+}
+/* SORT/LIMIT SECTION */
+.GuiBuilder-sort-limit {
+  min-width: 0px;
+}
+.EllipsisButton {
+  font-size: 3em;
+  position: relative;
+  top: -0.8rem;
+}
+/* NATIVE */
+.NativeQueryEditor .GuiBuilder-data {
+  border-right: none;
+}
+.NativeQueryEditorDragHandleWrapper {
+  position: absolute;
+  height: 8px;
+  width: 100%;
+  bottom: -4px;
+  cursor: row-resize;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.NativeQueryEditorDragHandle {
+  background: rgb(247, 236, 236);
+  width: 100px;
+  height: 5px;
+  border-radius: 4px;
+}
+/* VISUALIZATION SETTINGS */
+.VisualizationSettings .GuiBuilder-section {
+  border-right: none !important;
+}
+.ChartType-button {
+  width: 38px;
+  height: 38px;
+  border-radius: 38px;
+  background-color: white;
+  border: 1px solid #eeecec;
+}
+.ChartType-popover {
+  min-width: 15em !important;
+}
+.ChartType--selected {
+  color: white;
+  background-color: #509ee3;
+}
+.ChartType--notSensible {
+  opacity: 0.5;
+}
+.ColorWell {
+  width: 18px;
+  height: 18px;
+  margin: 3px;
+  margin-right: 0.3rem;
+}
+.RunButton {
+  opacity: 1;
+  transition: transform 0.25s, opacity 0.25s;
+}
+.RunButton.RunButton--compact {
+  padding: 16px 32px;
+}
+.RunButton.RunButton--hidden {
+  transform: translateY(-20px);
+  opacity: 0;
+}
+@media (prefers-reduced-motion) {
+  .RunButton,
+  .RunButton.RunButton--compact,
+  .RunButton.RunButton--hidden {
+    transition-duration: 10ms;
+  }
+}
+/* DATA REFERENCE */
+.SideDrawer {
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  right: -300;
+  width: 300px;
+  height: 100%;
+  background-color: #f9fbfc;
+  border-left: 1px solid #eeecec;
+  overflow: hidden;
+  opacity: 0;
+}
+.SideDrawer--show {
+  z-index: 0;
+  right: 0;
+  opacity: 1;
+  transition: all 0.5s;
+}
+.DataReference h1 {
+  font-size: 20pt;
+}
+.DataReference-paneCount {
+  padding-right: 0.6em;
+}
+.ObjectJSON {
+  max-height: 200px;
+  overflow: scroll;
+  padding: 1em;
+  background-color: #f9fbfc;
+  border: 1px solid #eeecec;
+  border-radius: 2px;
+  white-space: pre-wrap;
+}
+.PopoverBody.AddToDashboard {
+  min-width: 25em;
+}
+.List-item:not(.List-item--disabled):hover .FieldList-grouping-trigger,
+.List-item--selected .FieldList-grouping-trigger {
+  visibility: visible;
+}
+.QuestionTooltipTarget {
+  color: #949aab;
+  display: inline-block;
+  border: 2px solid currentColor;
+  border-radius: 99px;
+  width: 20px;
+  height: 20px;
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+  opacity: 0.7;
+
+  cursor: pointer;
+}
+.QuestionTooltipTarget:after {
+  content: "?";
+  font-size: 13px;
+  font-weight: bold;
+}
+.FilterInput:hover .FilterRemove-field {
+  opacity: 1;
+}
+/* need to do this ugliness to override the locally scoped font size from Scalar.css */
+.QueryBuilder .ScalarValue {
+  font-size: 5em;
+}
+.sql-code {
+  font-size: 90%;
+  line-height: 1.2em;
+  font-family: "Courier 10 Pitch", Courier, monospace;
+  white-space: pre;
+  white-space: pre-wrap;
+  white-space: -moz-pre-wrap;
+  white-space: -o-pre-wrap;
+  background-color: #f9fbfc;
+  border: 1px solid #eeecec;
+  border-radius: 4px;
+}
+.ParameterValuePickerNoPopover input {
+  font-size: 16px;
+  color: #4c5773;
+  border: none;
+}
+.ParameterValuePickerNoPopover--selected input {
+  font-weight: bold;
+  color: #509ee3;
+}
+.ParameterValuePickerNoPopover input:focus {
+  outline: none;
+  color: #4c5773;
+}
+.ParameterValuePickerNoPopover input::-webkit-input-placeholder {
+  color: #696e7b;
+}
+

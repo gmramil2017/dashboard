@@ -1,0 +1,9 @@
+{
+"version":3,
+"file":"shadow.js.shim.module$moment_timezone.js",
+"lineCount":5,
+"mappings":"AAAAA,IAAKC,CAAAA,OAAL,CAAa,uCAAb,CAAA;AACAD,IAAKC,CAAAA,OAAL,CAAa,8CAAb,CAAA;AACAC,MAAOC,CAAAA,EAAGC,CAAAA,IAAKC,CAAAA,sBAAf,GAAwCC,OAAA,CAAQ,iBAAR,CAAxC;AACAC,4CAA6CC,CAAAA,OAA7C,GAAuDN,MAAOC,CAAAA,EAAGC,CAAAA,IAAKC,CAAAA,sBAAtE;;",
+"sources":["shadow.js.shim.module$moment_timezone.js"],
+"sourcesContent":["goog.provide(\"shadow.js.shim.module$moment_timezone\");\ngoog.provide(\"module$shadow_js_shim_module$moment_timezone\");\nshadow.js.shim.module$moment_timezone = require(\"moment-timezone\");\nmodule$shadow_js_shim_module$moment_timezone.default = shadow.js.shim.module$moment_timezone;\n"],
+"names":["goog","provide","shadow","js","shim","module$moment_timezone","require","module$shadow_js_shim_module$moment_timezone","default"]
+}

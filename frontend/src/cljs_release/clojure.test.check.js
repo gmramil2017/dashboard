@@ -1,0 +1,2 @@
+var window=global;var $CLJS=require("./cljs_env.js");require("./cljs.core.js");require("./clojure.test.check.generators.js");require("./clojure.test.check.random.js");require("./clojure.test.check.results.js");require("./clojure.test.check.rose_tree.js");require("./clojure.test.check.impl.js");
+'use strict';

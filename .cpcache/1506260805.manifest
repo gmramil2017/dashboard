@@ -1,0 +1,16 @@
+/home/gmrworkspace/dashboard/modules/drivers/vertica/deps.edn
+/home/gmrworkspace/dashboard/modules/drivers/sparksql/deps.edn
+/home/gmrworkspace/dashboard/modules/drivers/sqlite/deps.edn
+/home/gmrworkspace/dashboard/modules/drivers/deps.edn
+/home/gmrworkspace/dashboard/modules/drivers/bigquery-cloud-sdk/deps.edn
+/home/gmrworkspace/dashboard/modules/drivers/snowflake/deps.edn
+/home/gmrworkspace/dashboard/modules/drivers/athena/deps.edn
+/home/gmrworkspace/dashboard/modules/drivers/sqlserver/deps.edn
+/home/greg/.gitlibs/libs/com.github.seancorfield/next.jdbc/8f372917a4b8b55c893ef6586f9ffe8dce4cbc7e/deps.edn
+/home/gmrworkspace/dashboard/modules/drivers/googleanalytics/deps.edn
+/home/gmrworkspace/dashboard/modules/drivers/presto-jdbc/deps.edn
+/home/greg/.gitlibs/libs/io.github.clojure/tools.build/76b78fe20355c3570ce5477bc80c39c79e097af2/deps.edn
+/home/gmrworkspace/dashboard/modules/drivers/redshift/deps.edn
+/home/gmrworkspace/dashboard/modules/drivers/oracle/deps.edn
+/home/gmrworkspace/dashboard/modules/drivers/mongo/deps.edn
+/home/gmrworkspace/dashboard/modules/drivers/druid/deps.edn

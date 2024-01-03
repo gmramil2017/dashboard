@@ -1,0 +1,1 @@
+{"version":3,"sources":["metabase/shared/util/namespaces.cljs"],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;","names":[],"sourcesContent":["(ns metabase.shared.util.namespaces\n  (:require-macros\n   [metabase.shared.util.namespaces]))\n"]}

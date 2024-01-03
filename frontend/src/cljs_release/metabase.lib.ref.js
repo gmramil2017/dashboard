@@ -1,0 +1,2 @@
+var window=global;var $CLJS=require("./cljs_env.js");require("./cljs.core.js");require("./metabase.lib.dispatch.js");require("./metabase.lib.schema.ref.js");require("./metabase.util.malli.js");
+'use strict';var Mla,Nla,Ola,Pla,Qla;Mla=$CLJS.ij.g($CLJS.P);Nla=$CLJS.ij.g($CLJS.P);Ola=$CLJS.ij.g($CLJS.P);Pla=$CLJS.ij.g($CLJS.P);Qla=$CLJS.M.j($CLJS.P,$CLJS.Vk,$CLJS.rj.A?$CLJS.rj.A():$CLJS.rj.call(null));$CLJS.rV=new $CLJS.Aj($CLJS.$i.h("metabase.lib.ref","ref-method"),$CLJS.LG,$CLJS.Uj,Qla,Mla,Nla,Ola,Pla);

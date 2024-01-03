@@ -1,0 +1,2 @@
+var window=global;var $CLJS=require("./cljs_env.js");require("./cljs.core.js");require("./metabase.shared.formatting.date.js");require("./metabase.shared.formatting.internal.date_options.js");require("./metabase.shared.util.time.js");
+'use strict';module.exports={format_time:function(a){a=$CLJS.t5(a);return $CLJS.m($CLJS.v5.l($CLJS.J([a])))?a.format("LT"):null},format_time_with_unit:function(a,b){b=$CLJS.U.j($CLJS.Q$(b),$CLJS.eF,!1);return $CLJS.S$(a,b)}};

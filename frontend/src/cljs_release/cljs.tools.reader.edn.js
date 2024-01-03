@@ -1,0 +1,2 @@
+var window=global;var $CLJS=require("./cljs_env.js");require("./cljs.core.js");require("./cljs.tools.reader.impl.errors.js");require("./cljs.tools.reader.reader_types.js");require("./cljs.tools.reader.impl.utils.js");require("./cljs.tools.reader.impl.commons.js");require("./cljs.tools.reader.js");
+'use strict';

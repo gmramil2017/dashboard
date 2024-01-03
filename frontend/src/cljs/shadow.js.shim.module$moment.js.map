@@ -1,0 +1,9 @@
+{
+"version":3,
+"file":"shadow.js.shim.module$moment.js",
+"lineCount":5,
+"mappings":"AAAAA,IAAKC,CAAAA,OAAL,CAAa,8BAAb,CAAA;AACAD,IAAKC,CAAAA,OAAL,CAAa,qCAAb,CAAA;AACAC,MAAOC,CAAAA,EAAGC,CAAAA,IAAKC,CAAAA,aAAf,GAA+BC,OAAA,CAAQ,QAAR,CAA/B;AACAC,mCAAoCC,CAAAA,OAApC,GAA8CN,MAAOC,CAAAA,EAAGC,CAAAA,IAAKC,CAAAA,aAA7D;;",
+"sources":["shadow.js.shim.module$moment.js"],
+"sourcesContent":["goog.provide(\"shadow.js.shim.module$moment\");\ngoog.provide(\"module$shadow_js_shim_module$moment\");\nshadow.js.shim.module$moment = require(\"moment\");\nmodule$shadow_js_shim_module$moment.default = shadow.js.shim.module$moment;\n"],
+"names":["goog","provide","shadow","js","shim","module$moment","require","module$shadow_js_shim_module$moment","default"]
+}

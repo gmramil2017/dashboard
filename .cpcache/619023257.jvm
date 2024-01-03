@@ -1,0 +1,4 @@
+-Dclojure.main.report=stderr
+-XX:-OmitStackTraceInFastThrow
+-XX:+IgnoreUnrecognizedVMOptions
+-XX:+ShowCodeDetailsInExceptionMessages

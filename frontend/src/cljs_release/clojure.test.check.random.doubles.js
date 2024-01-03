@@ -1,0 +1,2 @@
+var window=global;var $CLJS=require("./cljs_env.js");require("./cljs.core.js");require("./clojure.test.check.random.longs.js");
+'use strict';a:for(var Aw=53,Bw=1;;){if(0===Aw){$CLJS.zw=Bw;break a}var nca=Bw/2;--Aw;Bw=nca}$CLJS.oca=4294967296*$CLJS.zw;

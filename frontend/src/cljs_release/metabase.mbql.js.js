@@ -1,0 +1,2 @@
+var window=global;var $CLJS=require("./cljs_env.js");require("./cljs.core.js");require("./metabase.mbql.normalize.js");require("./metabase.util.js");
+'use strict';$CLJS.G9=function G9(a){return $CLJS.m($CLJS.m(a)?a instanceof Object&&$CLJS.de(a.raw):a)?(a=$CLJS.$E(a.raw()),G9.g?G9.g(a):G9.call(null,a)):$CLJS.oe(a)?$CLJS.wu(a,G9):$CLJS.ne(a)?$CLJS.Vm.h(G9,a):a};module.exports={normalize:function(a){return $CLJS.pn.l((0,$CLJS.u7)($CLJS.G9($CLJS.$E(a))),$CLJS.J([$CLJS.tm,$CLJS.sF]))}};

@@ -1,0 +1,2 @@
+-Dmb.run.mode=dev
+-Djava.awt.headless=true
